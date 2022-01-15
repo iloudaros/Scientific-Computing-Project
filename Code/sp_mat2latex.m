@@ -170,8 +170,11 @@ switch sp_type
 
         fprintf(file,'%d\\\\ \\hline \r\n \\end{tabular}$$ \r\n',col_ip(end));% Τέλος Tabular
 
-end
 
+
+end
+fclose(file);
+type out.tex;
 
 
 end
