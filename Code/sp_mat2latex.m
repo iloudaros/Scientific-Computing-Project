@@ -41,7 +41,7 @@ switch sp_type
                     row_ip(i)=nz_number_in_row(i-1)+row_ip(i-1); %Τότε το στοιχείο του val από το οποίο ξεκινάει αυτή η σειρά είναι <--
                 end
             else
-                row_ip=0; %Αν η σειρά έχει μόνο μηδενικά στοιχεία τότε βάλε στον δείκτη σειρά 0
+                row_ip(i)=0; %Αν η σειρά έχει μόνο μηδενικά στοιχεία τότε βάλε στον δείκτη σειρά 0
 
             end
         end
@@ -112,10 +112,10 @@ end
 
 fprintf(file,'}\\hline\r\n');%Τέλος πρώτης γραμμής (ορισμός μεγέθους πίνακα)
 
-for i=1:size(val,1)-1, fprintf(file,'%f &',val(i));% Τέλος δεδομένων
+for i=1:size(val,1)-1, fprintf(file,'%.4f &',val(i));% Τέλος δεδομένων
 end
 
-fprintf(file,'%f\\\\ \\hline \r\n \\end{tabular}$$\r\n',val(end));% Τέλος Tabular
+fprintf(file,'%.4f\\\\ \\hline \r\n \\end{tabular}$$\r\n',val(end));% Τέλος Tabular
 
 
 switch sp_type
