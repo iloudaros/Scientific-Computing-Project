@@ -23,9 +23,9 @@ col(2)=3;
 row = ones(1,n);
 row(1)=2;
 row(2)=4;
-X = toeplitz(col,row); % Δημιουργήσαμε ένα μητρώο που σε κάθε του θέση
+Indexes = toeplitz(col,row); % Δημιουργήσαμε ένα μητρώο που σε κάθε του θέση
 % είναι ο δείκτης που αντιστοιχεί σε ένα μητρώο του Τ
 
-R = cell2mat(T(X));
-
+R = cell2mat(T(Indexes));
+R = sparse(R);
 end
