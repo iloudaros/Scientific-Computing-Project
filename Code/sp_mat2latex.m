@@ -1,7 +1,12 @@
 function [val,row_ip,col_ip] = sp_mat2latex(A,sp_type)
 % Author: Ioannis Loudaros, ΑΜ:1067400, Date: 13/01/22
-% To-do:Βάλε τα περιεχόμενα των cases σε ξεχωριστά functions
 
+% TODO:Βάλε τα περιεχόμενα των cases σε ξεχωριστά functions
+% TODO:Φτιάξε επιλογή για Α sparse ώστε να γίνει ταχύτερη η συνάρτηση
+
+A=full(A); % Δεν είδα στην εκφώνηση ότι το Α είναι τύπου sparse, 
+% oπότε έγραψα αρχικά την συνάρτηση για κανονικά μητρώα και δεν προλαβαίνω
+% να την διορθώσω!!!
 
 nz=nnz(A); % Number of non zero matrix elements
 height=size(A,1); % height of A
@@ -92,7 +97,9 @@ switch sp_type
         error("You didn't define the output type correctly")
 end
 
-%% 
+
+
+%%
 
 %Δημιουργείται ένα αρχείο για να γραφεί η Latex
 file=fopen('out.tex','w');
