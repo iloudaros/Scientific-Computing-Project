@@ -183,5 +183,4 @@ end
 fclose(file);
 type out.tex;
 
-
 end
