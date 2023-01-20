@@ -1,4 +1,4 @@
-function [outputArg1,outputArg2] = my_gbmm_1067400(A,B);
+function C = my_gbmm_1067400(A,B)
 %% Author: Ioannis Loudaros, ΑΜ:1067400
 %% Version: 0.1     Date: 20/01/2023
 % symbols_seq : Η ακολουθία συμβόλων που παραλαμβάνεται.
@@ -9,6 +9,8 @@ function [outputArg1,outputArg2] = my_gbmm_1067400(A,B);
 % να γίνουν map. Θα προστεθούν απλά στο τέλος, αν δοθούν.
 % bin_seq : Δυαδική ακολουθία που προκύπτει από τα σύμβολα.
 
-outputArg1 = inputArg1;
-outputArg2 = inputArg2;
+[AB, pa, qa] = bandmatrix(A);
+[BB, pb, qb] = bandmatrix(B);
+
+
 end
