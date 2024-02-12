@@ -15,8 +15,8 @@ for k = 1:log2(n)+1
     U = triu(A,1)*-1;
     D_inv = inv(D);
 
-    A = (D - L*D_inv*U - U*D_inv*L) - L*D_inv*L - U*D_inv*U; % Δημιουργία του Α^(k)
-    B = B + L*(D_inv*B) + U*(D_inv*B) ; % Δημιουργία του B^(k)
+    A = (D+L+U)*D_inv*A; % Δημιουργία του Α^(k)
+    B = (D+L+U)*D_inv*B; % Δημιουργία του B^(k)
 end
     x = B./diag(A);
 
